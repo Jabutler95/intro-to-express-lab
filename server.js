@@ -1,6 +1,7 @@
 // import modules
 
 import express from 'express'
+import { cars } from "./data/cars-data.js";
 
 // create Express app
 
@@ -15,12 +16,13 @@ app.set('view engine', 'ejs')
 
 
 // mount routes
-app.get('/', function(req, res) {
-  res.send('<h1> hello, friend</h1>')
-})
-
 app.get('/home', function(req, res) {
   res.render('home')
+})
+app.get('cars', function(req, res) {
+  res.render('cars/index', {
+    cars: cars
+  })
 })
 
 
