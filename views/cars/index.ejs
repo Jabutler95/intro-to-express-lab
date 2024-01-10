@@ -6,6 +6,17 @@
   <title>First Express App</title>
 </head>
 <body>
-  
+  <h1>Cars</h1>
+  <ul>
+    <a href="/home">Home</a>
+    <% cars.forEach(car => { %>
+      <li>
+				<%= car.make %> 
+				<%= car.model %> 
+				- 
+				<%= car.isFast ? 'zoom zoom' : 'putt putt' %>
+			</li>
+    <% }) %>
+  </ul>
 </body>
 </html>
